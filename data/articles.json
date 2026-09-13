@@ -1,0 +1,1363 @@
+[
+  {
+    "id": "article_01",
+    "title": "怪谈本篇",
+    "excerpt": "四平一中校园怪谈长卷：苏亚利夺权成恶魔校长，科技楼复制性命案频发，伦纳威尔旅程收束全篇，共164个编号章节加序章。",
+    "source_file": "data/raw/01_怪谈本篇.txt",
+    "tags": [
+      "主线",
+      "人间",
+      "校园怪谈"
+    ],
+    "chapters": [
+      {
+        "part": "第1章",
+        "title": "0.序",
+        "start_marker": "0.序"
+      },
+      {
+        "part": "第2章",
+        "title": "1.坠落的身影",
+        "start_marker": "1.坠落的身影"
+      },
+      {
+        "part": "第3章",
+        "title": "2.一楼的奇响",
+        "start_marker": "2.一楼的奇响"
+      },
+      {
+        "part": "第4章",
+        "title": "3.三楼的神秘人",
+        "start_marker": "3.三楼的神秘人"
+      },
+      {
+        "part": "第5章",
+        "title": "4.奇异监控室",
+        "start_marker": "4.奇异监控室"
+      },
+      {
+        "part": "第6章",
+        "title": "5.宗教信仰(一)",
+        "start_marker": "5.宗教信仰(一)"
+      },
+      {
+        "part": "第7章",
+        "title": "6.光敏学生",
+        "start_marker": "6.光敏学生"
+      },
+      {
+        "part": "第8章",
+        "title": "7.“凶杀”",
+        "start_marker": "7.“凶杀”"
+      },
+      {
+        "part": "第9章",
+        "title": "8.咖啡",
+        "start_marker": "8.咖啡"
+      },
+      {
+        "part": "第10章",
+        "title": "9.镜中人",
+        "start_marker": "9.镜中人"
+      },
+      {
+        "part": "第11章",
+        "title": "10.航模比赛",
+        "start_marker": "10.航模比赛"
+      },
+      {
+        "part": "第12章",
+        "title": "11.灭火器",
+        "start_marker": "11.灭火器"
+      },
+      {
+        "part": "第13章",
+        "title": "12.二龙湖水怪",
+        "start_marker": "12.二龙湖水怪"
+      },
+      {
+        "part": "第14章",
+        "title": "13.早恋",
+        "start_marker": "13.早恋"
+      },
+      {
+        "part": "第15章",
+        "title": "14.招魂",
+        "start_marker": "14.招魂"
+      },
+      {
+        "part": "第16章",
+        "title": "15.不要恐慌",
+        "start_marker": "15.不要恐慌"
+      },
+      {
+        "part": "第17章",
+        "title": "16.神秘仪式(一)",
+        "start_marker": "16.神秘仪式(一)"
+      },
+      {
+        "part": "第18章",
+        "title": "17.神秘仪式(二)",
+        "start_marker": "17.神秘仪式(二)"
+      },
+      {
+        "part": "第19章",
+        "title": "18.乌鸦医生",
+        "start_marker": "18.乌鸦医生"
+      },
+      {
+        "part": "第20章",
+        "title": "19.高压电",
+        "start_marker": "19.高压电"
+      },
+      {
+        "part": "第21章",
+        "title": "20.垃圾焚化炉",
+        "start_marker": "20.垃圾焚化炉"
+      },
+      {
+        "part": "第22章",
+        "title": "21.包饼",
+        "start_marker": "21.包饼"
+      },
+      {
+        "part": "第23章",
+        "title": "22.校园欺凌",
+        "start_marker": "22.校园欺凌"
+      },
+      {
+        "part": "第24章",
+        "title": "23.童话",
+        "start_marker": "23.童话"
+      },
+      {
+        "part": "第25章",
+        "title": "24.图书馆奇路",
+        "start_marker": "24.图书馆奇路"
+      },
+      {
+        "part": "第26章",
+        "title": "25.人皮恶魔",
+        "start_marker": "25.人皮恶魔"
+      },
+      {
+        "part": "第27章",
+        "title": "26.食堂奇梦",
+        "start_marker": "26.食堂奇梦"
+      },
+      {
+        "part": "第28章",
+        "title": "27.暴食",
+        "start_marker": "27.暴食"
+      },
+      {
+        "part": "第29章",
+        "title": "28.被抛弃的人",
+        "start_marker": "28.被抛弃的人"
+      },
+      {
+        "part": "第30章",
+        "title": "29.死灵之书",
+        "start_marker": "29.死灵之书"
+      },
+      {
+        "part": "第31章",
+        "title": "30.不灭的灯",
+        "start_marker": "30.不灭的灯"
+      },
+      {
+        "part": "第32章",
+        "title": "31.流浪猫",
+        "start_marker": "31.流浪猫"
+      },
+      {
+        "part": "第33章",
+        "title": "32.冰黑茶",
+        "start_marker": "32.冰黑茶"
+      },
+      {
+        "part": "第34章",
+        "title": "33.瘪乎的马",
+        "start_marker": "33.瘪乎的马"
+      },
+      {
+        "part": "第35章",
+        "title": "34.建校奇闻-鬼布娃连啼震东邑 白道士劝善扬功名",
+        "start_marker": "34.建校奇闻-鬼布娃连啼震东邑 白道士劝善扬功名"
+      },
+      {
+        "part": "第36章",
+        "title": "35.读书人",
+        "start_marker": "35.读书人"
+      },
+      {
+        "part": "第37章",
+        "title": "36.偷窥",
+        "start_marker": "36.偷窥"
+      },
+      {
+        "part": "第38章",
+        "title": "37.碎掉的瓦片",
+        "start_marker": "37.碎掉的瓦片"
+      },
+      {
+        "part": "第39章",
+        "title": "38.放鞭炮",
+        "start_marker": "38.放鞭炮"
+      },
+      {
+        "part": "第40章",
+        "title": "39.宗教信仰(二)",
+        "start_marker": "39.宗教信仰(二)"
+      },
+      {
+        "part": "第41章",
+        "title": "40.催眠师",
+        "start_marker": "40.催眠师"
+      },
+      {
+        "part": "第42章",
+        "title": "41.大雪来时",
+        "start_marker": "41.大雪来时"
+      },
+      {
+        "part": "第43章",
+        "title": "42.头布",
+        "start_marker": "42.头布"
+      },
+      {
+        "part": "第44章",
+        "title": "43.体检",
+        "start_marker": "43.体检"
+      },
+      {
+        "part": "第45章",
+        "title": "44.日记",
+        "start_marker": "44.日记"
+      },
+      {
+        "part": "第46章",
+        "title": "45.英才计划",
+        "start_marker": "45.英才计划"
+      },
+      {
+        "part": "第47章",
+        "title": "46.探宝者",
+        "start_marker": "46.探宝者"
+      },
+      {
+        "part": "第48章",
+        "title": "47.绝密档案",
+        "start_marker": "47.绝密档案"
+      },
+      {
+        "part": "第49章",
+        "title": "48.世界终结者前传",
+        "start_marker": "48.世界终结者前传"
+      },
+      {
+        "part": "第50章",
+        "title": "49.守门人",
+        "start_marker": "49.守门人"
+      },
+      {
+        "part": "第51章",
+        "title": "50.四人帮一起源",
+        "start_marker": "50.四人帮一起源"
+      },
+      {
+        "part": "第52章",
+        "title": "51.委托",
+        "start_marker": "51.委托"
+      },
+      {
+        "part": "第53章",
+        "title": "52.双面人",
+        "start_marker": "52.双面人"
+      },
+      {
+        "part": "第54章",
+        "title": "53.烟鬼",
+        "start_marker": "53.烟鬼"
+      },
+      {
+        "part": "第55章",
+        "title": "54.学校怪谈",
+        "start_marker": "54.学校怪谈"
+      },
+      {
+        "part": "第56章",
+        "title": "55.药(上)",
+        "start_marker": "55.药(上)"
+      },
+      {
+        "part": "第57章",
+        "title": "56.熊的晚餐",
+        "start_marker": "56.熊的晚餐"
+      },
+      {
+        "part": "第58章",
+        "title": "57.恶魔铁匠",
+        "start_marker": "57.恶魔铁匠"
+      },
+      {
+        "part": "第59章",
+        "title": "58.刀客塔",
+        "start_marker": "58.刀客塔"
+      },
+      {
+        "part": "第60章",
+        "title": "59.从者",
+        "start_marker": "59.从者"
+      },
+      {
+        "part": "第61章",
+        "title": "60.黑与白",
+        "start_marker": "60.黑与白"
+      },
+      {
+        "part": "第62章",
+        "title": "61.大聚会(上)",
+        "start_marker": "61.大聚会(上)"
+      },
+      {
+        "part": "第63章",
+        "title": "62.黑市",
+        "start_marker": "62.黑市"
+      },
+      {
+        "part": "第64章",
+        "title": "63.科技楼自救指南",
+        "start_marker": "63.科技楼自救指南"
+      },
+      {
+        "part": "第65章",
+        "title": "64.逃生",
+        "start_marker": "64.逃生"
+      },
+      {
+        "part": "第66章",
+        "title": "65.水痘",
+        "start_marker": "65.水痘"
+      },
+      {
+        "part": "第67章",
+        "title": "66.明日方舟",
+        "start_marker": "66.明日方舟"
+      },
+      {
+        "part": "第68章",
+        "title": "67.复仇计划",
+        "start_marker": "67.复仇计划"
+      },
+      {
+        "part": "第69章",
+        "title": "68.大聚会(中)",
+        "start_marker": "68.大聚会(中)"
+      },
+      {
+        "part": "第70章",
+        "title": "69.药(下)",
+        "start_marker": "69.药(下)"
+      },
+      {
+        "part": "第71章",
+        "title": "70.大聚会(下)",
+        "start_marker": "70.大聚会(下)"
+      },
+      {
+        "part": "第72章",
+        "title": "71.伪装者(一)——离间",
+        "start_marker": "71.伪装者(一)——离间"
+      },
+      {
+        "part": "第73章",
+        "title": "72.诡异监控室",
+        "start_marker": "72.诡异监控室"
+      },
+      {
+        "part": "第74章",
+        "title": "73.最后的仪式",
+        "start_marker": "73.最后的仪式"
+      },
+      {
+        "part": "第75章",
+        "title": "74.伪装者(二)——嫁祸",
+        "start_marker": "74.伪装者(二)——嫁祸"
+      },
+      {
+        "part": "第76章",
+        "title": "75.驱魔",
+        "start_marker": "75.驱魔"
+      },
+      {
+        "part": "第77章",
+        "title": "76.庇护",
+        "start_marker": "76.庇护"
+      },
+      {
+        "part": "第78章",
+        "title": "77.伪装者(三)——线索",
+        "start_marker": "77.伪装者(三)——线索"
+      },
+      {
+        "part": "第79章",
+        "title": "78.学徒",
+        "start_marker": "78.学徒"
+      },
+      {
+        "part": "第80章",
+        "title": "79.广告",
+        "start_marker": "79.广告"
+      },
+      {
+        "part": "第81章",
+        "title": "80.田家炳",
+        "start_marker": "80.田家炳"
+      },
+      {
+        "part": "第82章",
+        "title": "81.局部坏死",
+        "start_marker": "81.局部坏死"
+      },
+      {
+        "part": "第83章",
+        "title": "82.邪恶的扩张",
+        "start_marker": "82.邪恶的扩张"
+      },
+      {
+        "part": "第84章",
+        "title": "83.宠物",
+        "start_marker": "83.宠物"
+      },
+      {
+        "part": "第85章",
+        "title": "84.一个不留",
+        "start_marker": "84.一个不留"
+      },
+      {
+        "part": "第86章",
+        "title": "85.伪装者(四)-失踪",
+        "start_marker": "85.伪装者(四)-失踪"
+      },
+      {
+        "part": "第87章",
+        "title": "86.大混战",
+        "start_marker": "86.大混战"
+      },
+      {
+        "part": "第88章",
+        "title": "87.楼梯帮",
+        "start_marker": "87.楼梯帮"
+      },
+      {
+        "part": "第89章",
+        "title": "88.探亲",
+        "start_marker": "88.探亲"
+      },
+      {
+        "part": "第90章",
+        "title": "89.四平一中女生宿舍旧事",
+        "start_marker": "89.四平一中女生宿舍旧事"
+      },
+      {
+        "part": "第91章",
+        "title": "90.欲望大战",
+        "start_marker": "90.欲望大战"
+      },
+      {
+        "part": "第92章",
+        "title": "91.四平一中男生宿舍运作细则",
+        "start_marker": "91.四平一中男生宿舍运作细则"
+      },
+      {
+        "part": "第93章",
+        "title": "92.骆驼和钟",
+        "start_marker": "92.骆驼和钟"
+      },
+      {
+        "part": "第94章",
+        "title": "93.狂人日记",
+        "start_marker": "93.狂人日记"
+      },
+      {
+        "part": "第95章",
+        "title": "94.埋葬者",
+        "start_marker": "94.埋葬者"
+      },
+      {
+        "part": "第96章",
+        "title": "95.神?",
+        "start_marker": "95.神?"
+      },
+      {
+        "part": "第97章",
+        "title": "96.不自量力",
+        "start_marker": "96.不自量力"
+      },
+      {
+        "part": "第98章",
+        "title": "97.核酸",
+        "start_marker": "97.核酸"
+      },
+      {
+        "part": "第99章",
+        "title": "98.催眠师·起源",
+        "start_marker": "98.催眠师·起源"
+      },
+      {
+        "part": "第100章",
+        "title": "99.阿普斯之死",
+        "start_marker": "99.阿普斯之死"
+      },
+      {
+        "part": "第101章",
+        "title": "100.西莫之死",
+        "start_marker": "100.西莫之死"
+      },
+      {
+        "part": "第102章",
+        "title": "101.神秘人",
+        "start_marker": "101.神秘人"
+      },
+      {
+        "part": "第103章",
+        "title": "102.毕业季",
+        "start_marker": "102.毕业季"
+      },
+      {
+        "part": "第104章",
+        "title": "103.伪装者(五)-交易",
+        "start_marker": "103.伪装者(五)-交易"
+      },
+      {
+        "part": "第105章",
+        "title": "104.余辉行动",
+        "start_marker": "104.余辉行动"
+      },
+      {
+        "part": "第106章",
+        "title": "105.狂妄之人",
+        "start_marker": "105.狂妄之人"
+      },
+      {
+        "part": "第107章",
+        "title": "106.美味牛奶",
+        "start_marker": "106. 美味牛奶"
+      },
+      {
+        "part": "第108章",
+        "title": "107.老爷爷",
+        "start_marker": "107.老爷爷"
+      },
+      {
+        "part": "第109章",
+        "title": "108.泥巴人",
+        "start_marker": "108.泥巴人"
+      },
+      {
+        "part": "第110章",
+        "title": "109.菌落",
+        "start_marker": "109.菌落"
+      },
+      {
+        "part": "第111章",
+        "title": "110.催眠师的端午节",
+        "start_marker": "110.催眠师的端午节"
+      },
+      {
+        "part": "第112章",
+        "title": "111.离弦",
+        "start_marker": "111.离弦"
+      },
+      {
+        "part": "第113章",
+        "title": "112.驼蘑泥传奇",
+        "start_marker": "112.驼蘑泥传奇"
+      },
+      {
+        "part": "第114章",
+        "title": "113.纳粹分子",
+        "start_marker": "113.纳粹分子"
+      },
+      {
+        "part": "第115章",
+        "title": "114.审判",
+        "start_marker": "114.审判"
+      },
+      {
+        "part": "第116章",
+        "title": "115.重生",
+        "start_marker": "115. 重生"
+      },
+      {
+        "part": "第117章",
+        "title": "116.离别",
+        "start_marker": "116.离别"
+      },
+      {
+        "part": "第118章",
+        "title": "117.小睡神",
+        "start_marker": "117.小睡神"
+      },
+      {
+        "part": "第119章",
+        "title": "118.哭声",
+        "start_marker": "118.哭声"
+      },
+      {
+        "part": "第120章",
+        "title": "119.抽风的异乡人",
+        "start_marker": "119.抽风的异乡人"
+      },
+      {
+        "part": "第121章",
+        "title": "120.成绩焦虑",
+        "start_marker": "120.成绩焦虑"
+      },
+      {
+        "part": "第122章",
+        "title": "121.迫害妄想",
+        "start_marker": "121.迫害妄想"
+      },
+      {
+        "part": "第123章",
+        "title": "122.星火医院",
+        "start_marker": "122.星火医院"
+      },
+      {
+        "part": "第124章",
+        "title": "123.第四面墙的寓言",
+        "start_marker": "123.第四面墙的寓言"
+      },
+      {
+        "part": "第125章",
+        "title": "124.智者与疯子",
+        "start_marker": "124.智者与疯子"
+      },
+      {
+        "part": "第126章",
+        "title": "125.周未派对",
+        "start_marker": "125.周未派对"
+      },
+      {
+        "part": "第127章",
+        "title": "126.报幕人",
+        "start_marker": "126.报幕人"
+      },
+      {
+        "part": "第128章",
+        "title": "127.毕业照",
+        "start_marker": "127.毕业照"
+      },
+      {
+        "part": "第129章",
+        "title": "128.校园演唱会",
+        "start_marker": "128.校园演唱会"
+      },
+      {
+        "part": "第130章",
+        "title": "129.小区调查报告(一)",
+        "start_marker": "129.小区调查报告(一)"
+      },
+      {
+        "part": "第131章",
+        "title": "130.小区调查报告(二)",
+        "start_marker": "130.小区调查报告(二)"
+      },
+      {
+        "part": "第132章",
+        "title": "131.小区调查报告(三)",
+        "start_marker": "131.小区调查报告(三)"
+      },
+      {
+        "part": "第133章",
+        "title": "132.小区调查报告(四)",
+        "start_marker": "132.小区调查报告(四)"
+      },
+      {
+        "part": "第134章",
+        "title": "133.仿生人",
+        "start_marker": "133.仿生人"
+      },
+      {
+        "part": "第135章",
+        "title": "134.隐形人",
+        "start_marker": "134.隐形人"
+      },
+      {
+        "part": "第136章",
+        "title": "135.新的开始",
+        "start_marker": "135.新的开始"
+      },
+      {
+        "part": "第137章",
+        "title": "136.结界",
+        "start_marker": "136.结界"
+      },
+      {
+        "part": "第138章",
+        "title": "137.桃花源记",
+        "start_marker": "137.桃花源记"
+      },
+      {
+        "part": "第139章",
+        "title": "138.格瓦斯",
+        "start_marker": "138.格瓦斯"
+      },
+      {
+        "part": "第140章",
+        "title": "139.头",
+        "start_marker": "139.头"
+      },
+      {
+        "part": "第141章",
+        "title": "140.考试",
+        "start_marker": "140.考试"
+      },
+      {
+        "part": "第142章",
+        "title": "141.含笑山庄",
+        "start_marker": "141.含笑山庄"
+      },
+      {
+        "part": "第143章",
+        "title": "142.日人王",
+        "start_marker": "142.日人王"
+      },
+      {
+        "part": "第144章",
+        "title": "143.还魂者",
+        "start_marker": "143.还魂者"
+      },
+      {
+        "part": "第145章",
+        "title": "144.仿生人一a",
+        "start_marker": "144.仿生人一a"
+      },
+      {
+        "part": "第146章",
+        "title": "145.凝视者",
+        "start_marker": "145.凝视者"
+      },
+      {
+        "part": "第147章",
+        "title": "146.番外·冰锤战士",
+        "start_marker": "146.番外·冰锤战士"
+      },
+      {
+        "part": "第148章",
+        "title": "147.圆桌会议",
+        "start_marker": "147.圆桌会议"
+      },
+      {
+        "part": "第149章",
+        "title": "148.食人魔",
+        "start_marker": "148.食人魔"
+      },
+      {
+        "part": "第150章",
+        "title": "149.怪谈·新年",
+        "start_marker": "149.怪谈·新年"
+      },
+      {
+        "part": "第151章",
+        "title": "150.伪洛之战（预告）",
+        "start_marker": "150.伪洛之战（预告）"
+      },
+      {
+        "part": "第152章",
+        "title": "151.跳与魔屋传奇",
+        "start_marker": "151.跳与魔屋传奇"
+      },
+      {
+        "part": "第153章",
+        "title": "152.天台见",
+        "start_marker": "152.天台见"
+      },
+      {
+        "part": "第154章",
+        "title": "153.不死者",
+        "start_marker": "153.不死者"
+      },
+      {
+        "part": "第155章",
+        "title": "154.见鬼",
+        "start_marker": "154.见鬼"
+      },
+      {
+        "part": "第156章",
+        "title": "155.冥界高材生",
+        "start_marker": "155.冥界高材生"
+      },
+      {
+        "part": "第157章",
+        "title": "156.母巢",
+        "start_marker": "156.母巢"
+      },
+      {
+        "part": "第158章",
+        "title": "157.时与梦(一)——过往之忆",
+        "start_marker": "157.时与梦(一)——过往之忆"
+      },
+      {
+        "part": "第159章",
+        "title": "158.偷枪",
+        "start_marker": "158.偷枪"
+      },
+      {
+        "part": "第160章",
+        "title": "159.殉道之人",
+        "start_marker": "159.殉道之人"
+      },
+      {
+        "part": "第161章",
+        "title": "160.一门父女",
+        "start_marker": "160.一门父女"
+      },
+      {
+        "part": "第162章",
+        "title": "161.忠臣易主",
+        "start_marker": "161.忠臣易主"
+      },
+      {
+        "part": "第163章",
+        "title": "162.新篇·序",
+        "start_marker": "162.新篇·序"
+      },
+      {
+        "part": "第164章",
+        "title": "163.时与梦(二)-传承",
+        "start_marker": "163.时与梦(二)-传承"
+      },
+      {
+        "part": "第165章",
+        "title": "164.伦纳威尔的旅程",
+        "start_marker": "164.伦纳威尔的旅程"
+      }
+    ]
+  },
+  {
+    "id": "article_02",
+    "title": "怪谈-终局之战（完整版）",
+    "excerpt": "2023暑假张福、杜本联合怪物与仿生人总攻一中，苏亚利毓德楼防线逐层崩解，张苏战终局收束。全书35节，含各小节目录。",
+    "source_file": "data/raw/02_怪谈-终局之战_完整版.txt",
+    "tags": [
+      "主线",
+      "决战",
+      "人间"
+    ],
+    "chapters": [
+      {
+        "part": "1.1 起源之地一前沿教育",
+        "title": "起源之地-前沿教育",
+        "start_marker": "1.1  起源之地一前沿教育"
+      },
+      {
+        "part": "1.2 天才的烦恼",
+        "title": "天才的烦恼",
+        "start_marker": "1.2 天才的烦恼"
+      },
+      {
+        "part": "1.3 魔屋",
+        "title": "魔屋",
+        "start_marker": "1.3 魔屋"
+      },
+      {
+        "part": "1.4 恒星灵魂",
+        "title": "恒星灵魂",
+        "start_marker": "1.4恒星灵魂"
+      },
+      {
+        "part": "1.5 烟火人间",
+        "title": "烟火人间",
+        "start_marker": "1.5烟火人间"
+      },
+      {
+        "part": "1.6 心理咨询",
+        "title": "心理咨询",
+        "start_marker": "1.6心理咨询"
+      },
+      {
+        "part": "1.7 合作",
+        "title": "合作",
+        "start_marker": "1.7合作"
+      },
+      {
+        "part": "1.8 拜访",
+        "title": "拜访",
+        "start_marker": "1.8 拜访"
+      },
+      {
+        "part": "1.9 谋杀",
+        "title": "谋杀",
+        "start_marker": "1.9 谋杀"
+      },
+      {
+        "part": "1.10 跳长室",
+        "title": "跳长室",
+        "start_marker": "1.10 跳长室"
+      },
+      {
+        "part": "2.1 决裂",
+        "title": "决裂",
+        "start_marker": "2.1 决裂"
+      },
+      {
+        "part": "2.2 计谋",
+        "title": "计谋",
+        "start_marker": "2.2 计谋"
+      },
+      {
+        "part": "2.3 烟鬼",
+        "title": "烟鬼",
+        "start_marker": "2.3 烟鬼"
+      },
+      {
+        "part": "2.4 盲校",
+        "title": "盲校",
+        "start_marker": "2.4 盲校"
+      },
+      {
+        "part": "2.5 猎人",
+        "title": "猎人",
+        "start_marker": "2.5 猎人"
+      },
+      {
+        "part": "2.6 孔子",
+        "title": "孔子",
+        "start_marker": "2.6 孔子"
+      },
+      {
+        "part": "2.7 大战前夕",
+        "title": "大战前夕",
+        "start_marker": "2.7 大战前夕"
+      },
+      {
+        "part": "3.1 除草大队",
+        "title": "除草大队",
+        "start_marker": "3.1 除草大队"
+      },
+      {
+        "part": "3.2 科技封锁",
+        "title": "科技封锁",
+        "start_marker": "3.2 科技封锁"
+      },
+      {
+        "part": "3.3 不速之客",
+        "title": "不速之客",
+        "start_marker": "3.3 不速之客"
+      },
+      {
+        "part": "3.4 武道之师",
+        "title": "武道之师",
+        "start_marker": "3.4 武道之师"
+      },
+      {
+        "part": "3.5 乌鸦医生",
+        "title": "乌鸦医生",
+        "start_marker": "3.5 乌鸦医生"
+      },
+      {
+        "part": "3.6 防御阵线",
+        "title": "防御阵线",
+        "start_marker": "3.6 防御阵线"
+      },
+      {
+        "part": "3.7 野食擂台",
+        "title": "野食擂台",
+        "start_marker": "3.7 野食擂台"
+      },
+      {
+        "part": "3.8 王者归来",
+        "title": "王者归来",
+        "start_marker": "3.8 王者归来"
+      },
+      {
+        "part": "3.9 解毒之法",
+        "title": "解毒之法",
+        "start_marker": "3.9 解毒之法"
+      },
+      {
+        "part": "3.10 死线突围",
+        "title": "死线突围",
+        "start_marker": "3.10 死线突围"
+      },
+      {
+        "part": "3.11 希望之种",
+        "title": "希望之种",
+        "start_marker": "3.11 希望之种"
+      },
+      {
+        "part": "3.12 不眠之夜",
+        "title": "不眠之夜",
+        "start_marker": "3.12 不眠之夜"
+      },
+      {
+        "part": "4.1 食堂绞肉机",
+        "title": "食堂绞肉机",
+        "start_marker": "4.1 食堂绞肉机"
+      },
+      {
+        "part": "4.2 林荫道催眠阵",
+        "title": "林荫道催眠阵",
+        "start_marker": "4.2 林荫道催眠阵"
+      },
+      {
+        "part": "4.3 毓德楼门前",
+        "title": "毓德楼门前",
+        "start_marker": "4.3 毓德楼门前"
+      },
+      {
+        "part": "4.4 法联的末路",
+        "title": "法联的末路",
+        "start_marker": "4.4 法联的末路"
+      },
+      {
+        "part": "4.5 最后的怪物",
+        "title": "最后的怪物",
+        "start_marker": "4.5 最后的怪物"
+      },
+      {
+        "part": "致那逝去的青春",
+        "title": "致那逝去的青春",
+        "start_marker": "致那逝去的青春"
+      }
+    ]
+  },
+  {
+    "id": "article_03",
+    "title": "怪谈后传：陈喜彪的报复",
+    "excerpt": "2023年9月聋哑学校校长陈喜彪为夺一中校长之位率学生筹谋攻打一中，却不知一中刚历终局之战、遍地仿生人。完整版共七章，含终局余波与陈喜彪的败亡。",
+    "source_file": "data/raw/03_怪谈后传-陈喜彪的报复.txt",
+    "tags": [
+      "后传",
+      "人间",
+      "支线"
+    ],
+    "chapters": [
+      {
+        "part": "第1章",
+        "title": "【一】",
+        "start_marker": "【一】"
+      },
+      {
+        "part": "第2章",
+        "title": "【二】",
+        "start_marker": "【二】"
+      },
+      {
+        "part": "第3章",
+        "title": "【三】",
+        "start_marker": "【三】"
+      },
+      {
+        "part": "第4章",
+        "title": "【四】",
+        "start_marker": "【四】"
+      },
+      {
+        "part": "第5章",
+        "title": "【五】",
+        "start_marker": "【五】"
+      },
+      {
+        "part": "第6章",
+        "title": "【六】",
+        "start_marker": "【六】"
+      },
+      {
+        "part": "第7章",
+        "title": "【七】",
+        "start_marker": "【七】"
+      }
+    ]
+  },
+  {
+    "id": "article_04",
+    "title": "业障",
+    "excerpt": "1930年代四平街净业莲寺：少年阿乐被日军军官伊田若幸误杀，冥界阿克塔索斯线展开，'业障'实体附身日本士兵复仇。",
+    "source_file": "data/raw/04_业障.txt",
+    "tags": [
+      "支线",
+      "前史",
+      "人间",
+      "冥界"
+    ],
+    "chapters": [
+      {
+        "part": "业障（一）",
+        "title": "净业莲寺缘起、伊田若幸之祸、业障复仇",
+        "start_marker": "业障（一）"
+      }
+    ]
+  },
+  {
+    "id": "article_05",
+    "title": "怪谈本篇-主线故事情节大纲",
+    "excerpt": "官方主线总纲：骆驼篇→鬼布娃篇→???组织篇→大混战篇→伪洛战篇→催眠师篇→张苏战篇，串联全系列主线。",
+    "source_file": "data/raw/05_怪谈本篇-主线故事情节大纲.txt",
+    "tags": [
+      "大纲",
+      "设定",
+      "主线"
+    ],
+    "chapters": [
+      {
+        "part": "骆驼篇",
+        "title": "骆驼的复制异变",
+        "start_marker": "骆驼篇"
+      },
+      {
+        "part": "鬼布娃篇",
+        "title": "白道士封印与鬼布娃传说",
+        "start_marker": "鬼布娃篇"
+      },
+      {
+        "part": "???组织篇",
+        "title": "奇烈三兄弟与七耀",
+        "start_marker": "???组织篇"
+      },
+      {
+        "part": "大聚会/大混战篇",
+        "title": "各管理者齐聚与科技楼混战",
+        "start_marker": "大聚会"
+      },
+      {
+        "part": "伪洛战篇",
+        "title": "伪装者与洛星总攻一中",
+        "start_marker": "伪洛战篇"
+      },
+      {
+        "part": "催眠师篇",
+        "title": "梦界守门人身世揭露",
+        "start_marker": "催眠师篇"
+      },
+      {
+        "part": "张苏战篇",
+        "title": "苏亚利与张福杜本大决战",
+        "start_marker": "张苏战篇"
+      }
+    ]
+  },
+  {
+    "id": "article_06",
+    "title": "冥界战争回忆录",
+    "excerpt": "卡戈波尔边境洛斯莫德遭伊塔米尔前锋部队入侵，第七军哨戒塔全军覆没，卡罗尔与扎马克、石之族、古拉酒馆幸存者反击。",
+    "source_file": "data/raw/06_冥界战争回忆录.txt",
+    "tags": [
+      "冥界",
+      "战争",
+      "支线"
+    ],
+    "chapters": [
+      {
+        "part": "1-1",
+        "title": "危楼之上",
+        "start_marker": "事件记录1-1"
+      },
+      {
+        "part": "1-2",
+        "title": "灯塔",
+        "start_marker": "事件记录1-2"
+      },
+      {
+        "part": "1-3",
+        "title": "外来者",
+        "start_marker": "事件记录1-3"
+      },
+      {
+        "part": "1-4",
+        "title": "噩梦",
+        "start_marker": "事件记录1-4"
+      },
+      {
+        "part": "1-5",
+        "title": "暗流涌动",
+        "start_marker": "事件记录1-5"
+      },
+      {
+        "part": "1-6",
+        "title": "往日仇恨",
+        "start_marker": "事件记录1-6"
+      },
+      {
+        "part": "1-7",
+        "title": "商人与巨锤",
+        "start_marker": "事件记录1-7"
+      },
+      {
+        "part": "1-8",
+        "title": "叛徒",
+        "start_marker": "事件记录1-8"
+      },
+      {
+        "part": "1-9",
+        "title": "列阵",
+        "start_marker": "事件记录1-9"
+      }
+    ]
+  },
+  {
+    "id": "article_07",
+    "title": "怪谈后日谈（第4则怪谈篇）",
+    "excerpt": "多篇散文集，前3则为跨作品童年回忆，后日谈为怪谈续篇：冥界能量不稳、养鸽人被新任副校长赵新宇所杀，'卡戈波尔取回力量、首个人间映射地即一中'。",
+    "source_file": "data/raw/07_七月七日.txt",
+    "tags": [
+      "续篇",
+      "人间",
+      "短篇"
+    ],
+    "chapters": [
+      {
+        "part": "第4则·怪谈篇",
+        "title": "养鸽人之死与赵新宇之谋",
+        "start_marker": "冥界最近能量很不稳定"
+      }
+    ]
+  },
+  {
+    "id": "article_08",
+    "title": "冥界设定百科",
+    "excerpt": "冥界宏观世界观骨架：三界体系、四大魔尊、三大国+15小国、诸组织/城市/科技/生物条目化速查。",
+    "source_file": "data/raw/08_冥界设定百科.txt",
+    "tags": [
+      "设定",
+      "冥界",
+      "百科"
+    ],
+    "chapters": [
+      {
+        "part": "导言",
+        "title": "冥界总览",
+        "start_marker": "冥界，区别于人界"
+      },
+      {
+        "part": "一、核心概念",
+        "title": "A1-A9：能量/漩涡/转世/法师/魔尊",
+        "start_marker": "第一部分：核心概念说明"
+      },
+      {
+        "part": "二、国家与地区",
+        "title": "B1-B22：虚无之环/寂静之地/诸国",
+        "start_marker": "第二部分"
+      },
+      {
+        "part": "三、组织与学派",
+        "title": "C1-C8",
+        "start_marker": "第三部分"
+      },
+      {
+        "part": "四、城市与区域",
+        "title": "D1-D6",
+        "start_marker": "第四部分"
+      },
+      {
+        "part": "五、食物与消耗品",
+        "title": "E1-E7",
+        "start_marker": "第五部分"
+      },
+      {
+        "part": "六、科技与法术",
+        "title": "F1-F18",
+        "start_marker": "第六部分"
+      },
+      {
+        "part": "七、文化与生活",
+        "title": "G1-G6",
+        "start_marker": "第七部分"
+      },
+      {
+        "part": "八、地理与自然",
+        "title": "H1-H5",
+        "start_marker": "第八部分"
+      },
+      {
+        "part": "九、特殊生物",
+        "title": "I1-I8",
+        "start_marker": "第九部分"
+      }
+    ]
+  },
+  {
+    "id": "article_09",
+    "title": "怪谈战争剧情1-1~1-8",
+    "excerpt": "与《冥界战争回忆录》同源的边境战争实录：卡罗尔苏醒于洛斯莫德哨戒高塔，与扎马克、古拉酒馆幸存者共同迎战入侵。",
+    "source_file": "data/raw/09_怪谈战争剧情1-1~1-8.txt",
+    "tags": [
+      "冥界",
+      "战争",
+      "支线"
+    ],
+    "chapters": [
+      {
+        "part": "1-1",
+        "title": "危楼之上",
+        "start_marker": "事件记录1-1"
+      },
+      {
+        "part": "1-2",
+        "title": "灯塔",
+        "start_marker": "事件记录1-2"
+      },
+      {
+        "part": "1-3",
+        "title": "外来者",
+        "start_marker": "事件记录1-3"
+      },
+      {
+        "part": "1-4",
+        "title": "噩梦",
+        "start_marker": "事件记录1-4"
+      },
+      {
+        "part": "1-5",
+        "title": "暗流涌动",
+        "start_marker": "事件记录1-5"
+      },
+      {
+        "part": "1-6",
+        "title": "往日仇恨",
+        "start_marker": "事件记录1-6"
+      },
+      {
+        "part": "1-7",
+        "title": "商人与巨锤",
+        "start_marker": "事件记录1-7"
+      },
+      {
+        "part": "1-8",
+        "title": "叛徒",
+        "start_marker": "事件记录1-8"
+      }
+    ]
+  },
+  {
+    "id": "article_10",
+    "title": "怪谈战争个人剧情·暂别光明",
+    "excerpt": "冥历1680年余火城雨天，失业青年扎马克为生计应征霍林顿家族黑帮旅馆，结识杜兰菲斯，卷入家族与禄家的暗流（扎马克前传）。",
+    "source_file": "data/raw/10_怪谈战争个人剧情.txt",
+    "tags": [
+      "前传",
+      "冥界",
+      "支线"
+    ],
+    "chapters": [
+      {
+        "part": "FL-1",
+        "title": "雨天",
+        "start_marker": "FL-1 雨天"
+      },
+      {
+        "part": "FL-2",
+        "title": "旅馆（含分支：A沉默带路/B如实相告）",
+        "start_marker": "FL-2 旅馆"
+      },
+      {
+        "part": "FL-3",
+        "title": "材料工厂",
+        "start_marker": "FL-3 材料工厂"
+      }
+    ]
+  }
+]

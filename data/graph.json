@@ -1,0 +1,256 @@
+{
+  "meta": {
+    "title": "怪谈世界知识图谱",
+    "description": "以「怪谈」为圆心的三界世界观知识图谱，覆盖三界架构、四大魔尊、核心人物与关键地点。",
+    "center_id": "guaitan",
+    "node_count": 18,
+    "relation_count": 27
+  },
+  "nodes": [
+    {
+      "id": "guaitan",
+      "name": "怪谈",
+      "category": "centered",
+      "summary": "贯穿三界的诡异世界观总纲，以四平一中与冥界战争为核心的两大舞台。"
+    },
+    {
+      "id": "ming-jie",
+      "name": "冥界",
+      "category": "realm",
+      "summary": "死者世界，由四大魔尊与诸国统治，冥界能量的发源地。"
+    },
+    {
+      "id": "meng-jie",
+      "name": "梦界",
+      "category": "realm",
+      "summary": "最神秘的梦境世界，白门常年封锁，守门人血脉方能进入。"
+    },
+    {
+      "id": "ren-jian",
+      "name": "人界/人间",
+      "category": "realm",
+      "summary": "活人世界，与冥界经黑色漩涡相通，四平一中的所在地。"
+    },
+    {
+      "id": "si-da-mo-zun",
+      "name": "四大魔尊",
+      "category": "faction",
+      "summary": "冥界四大国统治者：卡戈波尔、伊塔米尔、阿克塔索斯、普罗伦兹。"
+    },
+    {
+      "id": "ka-ge-bo-er",
+      "name": "卡戈波尔",
+      "category": "nation",
+      "summary": "崇尚规则之力的冥界大国，二战中被灭，残魂化作鬼布娃流落人间。"
+    },
+    {
+      "id": "yi-ta-mi-er",
+      "name": "伊塔米尔",
+      "category": "nation",
+      "summary": "崇尚幻想与梦境的冥界大国，痴迷打通梦界白门，发动边境战争。"
+    },
+    {
+      "id": "a-ke-ta-suo-si",
+      "name": "阿克塔索斯",
+      "category": "nation",
+      "summary": "冥界第一大势力，无为而治，拥有最大转世祭坛极昼祭坛。"
+    },
+    {
+      "id": "pu-luo-lun-ci",
+      "name": "普罗伦兹",
+      "category": "nation",
+      "summary": "资本与科技之城，首创交易与冥界硬币，企业渗透人间。"
+    },
+    {
+      "id": "jing-ji-zhi-di",
+      "name": "寂静之地",
+      "category": "region",
+      "summary": "秘密封闭地带，八大法师陨落之地，伦纳威尔的诞生地。"
+    },
+    {
+      "id": "si-ping-yi-zhong",
+      "name": "四平一中",
+      "category": "location",
+      "summary": "人间怪谈主舞台，鬼怪横行的校园，连接三界的中转站。"
+    },
+    {
+      "id": "su-ya-li",
+      "name": "苏亚利",
+      "category": "person",
+      "summary": "四平一中恶魔校长，张苏战中败亡，台面苏亚利实为仿生人替身。"
+    },
+    {
+      "id": "lun-na-wei-er",
+      "name": "伦纳威尔",
+      "category": "person",
+      "summary": "寂静之地唯一原生生命，图书馆管理者与幕后布局者。"
+    },
+    {
+      "id": "guan-li-zhe",
+      "name": "管理者",
+      "category": "faction",
+      "summary": "四平一中各楼权力的掌控者，维系校园怪谈秩序。"
+    },
+    {
+      "id": "luo-tuo",
+      "name": "骆驼",
+      "category": "person",
+      "summary": "科技楼复制事故的亲历者，灵魂分裂为本我与狂驼。"
+    },
+    {
+      "id": "ye-zhang",
+      "name": "业障",
+      "category": "entity",
+      "summary": "源于少年阿乐之死的复仇实体，向凶手伊田若幸索命。"
+    },
+    {
+      "id": "ka-luo-er",
+      "name": "卡罗尔",
+      "category": "person",
+      "summary": "卡戈波尔第七军幸存者，边境战争中奋起反抗的孤勇者。"
+    },
+    {
+      "id": "meng-jie-shou-men-ren",
+      "name": "梦界守门人",
+      "category": "faction",
+      "summary": "唯一能通过白门的血统，因伊塔米尔猎杀流亡至人间四平一中。"
+    }
+  ],
+  "relations": [
+    {
+      "source": "guaitan",
+      "target": "ming-jie",
+      "type": "涵盖"
+    },
+    {
+      "source": "guaitan",
+      "target": "meng-jie",
+      "type": "涵盖"
+    },
+    {
+      "source": "guaitan",
+      "target": "ren-jian",
+      "type": "涵盖"
+    },
+    {
+      "source": "guaitan",
+      "target": "si-ping-yi-zhong",
+      "type": "舞台"
+    },
+    {
+      "source": "si-da-mo-zun",
+      "target": "ming-jie",
+      "type": "统治"
+    },
+    {
+      "source": "si-da-mo-zun",
+      "target": "ka-ge-bo-er",
+      "type": "统辖"
+    },
+    {
+      "source": "si-da-mo-zun",
+      "target": "yi-ta-mi-er",
+      "type": "统辖"
+    },
+    {
+      "source": "si-da-mo-zun",
+      "target": "a-ke-ta-suo-si",
+      "type": "统辖"
+    },
+    {
+      "source": "si-da-mo-zun",
+      "target": "pu-luo-lun-ci",
+      "type": "统辖"
+    },
+    {
+      "source": "ming-jie",
+      "target": "ren-jian",
+      "type": "相通"
+    },
+    {
+      "source": "ming-jie",
+      "target": "meng-jie",
+      "type": "隔绝"
+    },
+    {
+      "source": "meng-jie-shou-men-ren",
+      "target": "meng-jie",
+      "type": "守护"
+    },
+    {
+      "source": "yi-ta-mi-er",
+      "target": "meng-jie",
+      "type": "觊觎"
+    },
+    {
+      "source": "yi-ta-mi-er",
+      "target": "meng-jie-shou-men-ren",
+      "type": "猎杀"
+    },
+    {
+      "source": "yi-ta-mi-er",
+      "target": "ka-ge-bo-er",
+      "type": "入侵"
+    },
+    {
+      "source": "jing-ji-zhi-di",
+      "target": "lun-na-wei-er",
+      "type": "孕育"
+    },
+    {
+      "source": "yi-ta-mi-er",
+      "target": "lun-na-wei-er",
+      "type": "关联"
+    },
+    {
+      "source": "ren-jian",
+      "target": "si-ping-yi-zhong",
+      "type": "位于"
+    },
+    {
+      "source": "si-ping-yi-zhong",
+      "target": "su-ya-li",
+      "type": "统治者"
+    },
+    {
+      "source": "si-ping-yi-zhong",
+      "target": "guan-li-zhe",
+      "type": "驻守"
+    },
+    {
+      "source": "guan-li-zhe",
+      "target": "lun-na-wei-er",
+      "type": "同属"
+    },
+    {
+      "source": "su-ya-li",
+      "target": "luo-tuo",
+      "type": "对抗"
+    },
+    {
+      "source": "si-ping-yi-zhong",
+      "target": "luo-tuo",
+      "type": "亲历"
+    },
+    {
+      "source": "ren-jian",
+      "target": "ye-zhang",
+      "type": "孕育"
+    },
+    {
+      "source": "a-ke-ta-suo-si",
+      "target": "ye-zhang",
+      "type": "关联"
+    },
+    {
+      "source": "ka-ge-bo-er",
+      "target": "ka-luo-er",
+      "type": "关联"
+    },
+    {
+      "source": "ming-jie",
+      "target": "luo-tuo",
+      "type": "关联"
+    }
+  ]
+}
