@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a0f1c"/>
+      <stop offset="0.55" stop-color="#0e1526"/>
+      <stop offset="1" stop-color="#0a0e19"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0" stop-color="rgba(214,226,255,0.55)"/>
+      <stop offset="1" stop-color="rgba(214,226,255,0)"/>
+    </linearGradient>
+    <linearGradient id="beamB" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0" stop-color="rgba(140,180,255,0.5)"/>
+      <stop offset="1" stop-color="rgba(140,180,255,0)"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#wall)"/>
+
+  <!-- 彩色玻璃窗 -->
+  <g transform="translate(620,60)">
+    <g transform="translate(0,0)">
+      <path d="M180 0 L360 60 L180 120 L0 60 Z" fill="#f4b23c" opacity="0.85"/>
+      <path d="M180 120 L360 180 L180 240 L0 180 Z" fill="#d64b4b" opacity="0.8"/>
+      <path d="M180 240 L360 300 L180 360 L0 300 Z" fill="#4f8dff" opacity="0.82"/>
+      <path d="M180 360 L360 420 L180 480 L0 420 Z" fill="#57a48a" opacity="0.8"/>
+      <path d="M360 60 L540 120 L360 180 L180 120 Z" fill="#7b5cd6" opacity="0.75"/>
+      <path d="M360 180 L540 240 L360 300 L180 240 Z" fill="#f4b23c" opacity="0.7"/>
+      <path d="M360 300 L540 360 L360 420 L180 360 Z" fill="#d64b4b" opacity="0.75"/>
+      <path d="M0 60 L180 120 L0 180 L-180 120 Z" fill="#57a48a" opacity="0.7"/>
+      <path d="M0 180 L180 240 L0 300 L-180 240 Z" fill="#7b5cd6" opacity="0.72"/>
+      <path d="M0 300 L180 360 L0 420 L-180 360 Z" fill="#4f8dff" opacity="0.7"/>
+      <g stroke="#0a0f1c" stroke-width="10" fill="none">
+        <path d="M0 60V420M180 0V480M360 60V420M540 120V360M-180 120V360"/>
+        <path d="M-180 120L180 0M-180 240L180 120M-180 360L180 240M0 420L360 240M180 480L540 300M360 420L540 240"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- 光束 -->
+  <g opacity="0.5" filter="url(#soft)">
+    <polygon points="690,120 790,120 900,900 560,900" fill="url(#beam)" opacity="0.5"/>
+    <polygon points="820,140 890,140 1000,900 720,900" fill="url(#beamB)" opacity="0.5"/>
+  </g>
+
+  <!-- 书堆剪影 -->
+  <g fill="#111a2c">
+    <rect x="0" y="640" width="1600" height="260"/>
+  </g>
+  <g fill="#182441">
+    <rect x="40" y="600" width="520" height="46"/>
+    <rect x="120" y="556" width="400" height="48"/>
+    <rect x="180" y="514" width="300" height="46"/>
+    <rect x="980" y="612" width="460" height="44"/>
+    <rect x="1010" y="570" width="360" height="46"/>
+    <rect x="1060" y="528" width="240" height="46"/>
+  </g>
+  <g fill="#24345c">
+    <rect x="70" y="562" width="18" height="38"/>
+    <rect x="150" y="600" width="16" height="44"/>
+    <rect x="300" y="556" width="20" height="46"/>
+    <rect x="1010" y="608" width="18" height="46"/>
+    <rect x="1120" y="570" width="16" height="44"/>
+    <rect x="1210" y="528" width="20" height="44"/>
+  </g>
+
+  <!-- 底部尘土光 -->
+  <ellipse cx="800" cy="886" rx="820" ry="22" fill="rgba(120,150,220,0.10)"/>
+</svg>
