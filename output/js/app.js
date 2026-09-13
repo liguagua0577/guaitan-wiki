@@ -1,6 +1,6 @@
-/* ============================================
+﻿/* ============================================
    怪谈世界 · 百科  —  数据驱动前端逻辑
-   数据源: ../data/  (terms.json / graph.json / articles.json / worldview.md / raw/*.txt)
+   数据源: ../data/  (terms.json / graph.json / articles.json / raw/*.txt)
    说明: 修改 JSON 文本后刷新页面即生效; 关键词链接由词条 name+aliases 自动生成。
    ============================================ */
 "use strict";
@@ -403,7 +403,7 @@ function renderLibrary() {
         </div>
         <div class="search-results" id="gkRes"></div>
         <div class="stories">
-          <div class="stories-h">怪谈原文 <span class="en">SOURCES · ${state.articles.length}</span></div>
+          <div class="stories-h">怪谈原文 <span class="en">SOURCES · ${state.articles.filter(a => a.id !== "worldview").length}</span></div>
           <div class="art-grid" id="gkArts"></div>
         </div>
       </div>
@@ -441,7 +441,7 @@ function renderLibrary() {
 
   $q.addEventListener("input", onInput);
   const $arts = document.getElementById("gkArts");
-  $arts.innerHTML = state.articles.map(a => `
+  $arts.innerHTML = state.articles.filter(a => a.id !== "worldview").map(a => `
     <button class="art-card" data-id="${esc(a.id)}" tabindex="0">
       <div class="tip">${esc(a.excerpt || "")}</div>
       <div class="t">${esc(a.title)}</div>
@@ -602,11 +602,9 @@ async function renderWorld() {
     </div></section>`;
   const $w = document.getElementById("gkW");
   try {
-    const r = await fetch(DATA_BASE + "worldview.md");
-    if (!r.ok) throw 0;
-    const md = await r.text();
-    let body = md.replace(/^---[\s\S]*?---\s*/m, "");          // 剥离文件头元数据
-    body = body.replace(/^#.*\n/m, "");                         // 剥离一级标题
+    const entry = state.articles.find(x => x.id === "worldview");
+    if (!entry || !entry.body) throw 0;
+    let body = entry.body;
     body = body.split(/\r?\n/).filter(l => !/内容由AI生成|仅供参考|本文由AI生成/.test(l)).join("\n"); // 清理AI说明行
     const paras = body.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean);
     $w.innerHTML = paras.map(p => `<p class="wp">${linkify(p)}</p>`).join("");
