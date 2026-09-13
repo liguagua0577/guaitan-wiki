@@ -12,6 +12,12 @@ const $hint = document.querySelector(".sidebar-hint");
 
 const state = { terms: [], articles: [], graph: null, termMap: null };
 
+/* ---------------- 开发者编辑模式 ---------------- */
+const EDIT_KEY = "0577";              // 开启编辑模式所需密钥
+const EDIT_STATE_KEY = "gt_edit_on";  // 编辑模式开关(浏览器持久)
+const OVERRIDE_KEY = "gt_terms_override"; // 本地编辑覆盖数据(localStorage 方案A)
+let editingOn = localStorage.getItem(EDIT_STATE_KEY) === "1";
+
 /* ---------------- 工具函数 ---------------- */
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
@@ -37,6 +43,11 @@ async function loadData() {
     fetch(DATA_BASE + "graph.json").then(r => r.json())
   ]);
   state.terms = t; state.articles = a; state.graph = g;
+  // 合并本地编辑覆盖(方案A: 刷新后保留网页上改过的词条)
+  try {
+    const ov = localStorage.getItem(OVERRIDE_KEY);
+    if (ov) { const parsed = JSON.parse(ov); if (Array.isArray(parsed)) state.terms = parsed; }
+  } catch (e) { localStorage.removeItem(OVERRIDE_KEY); }
   buildTermMap();
   if ($hint) $hint.textContent = state.terms.length + " 词条";
 }
@@ -44,6 +55,7 @@ async function loadData() {
 function buildTermMap() {
   const m = new Map(); // name / alias -> Set<id>
   for (const t of state.terms) {
+    if (t.linked === false) continue; // 关闭"加入链接"的词条不进自动链接, 仅可被搜索找到
     const keys = new Set([t.name, ...(t.aliases || [])]);
     for (const k of keys) { if (!k) continue; if (!m.has(k)) m.set(k, new Set()); m.get(k).add(t.id); }
   }
@@ -131,6 +143,7 @@ function router() {
   else if (view === "term" && seg[1]) renderTerm(decodeURIComponent(seg[1]));
   else if (view === "article" && seg[1]) renderReader(decodeURIComponent(seg[1]));
   else if (view === "world") renderWorld();
+  else if (view === "edit") { editingOn ? renderEdit() : renderEditLocked(); }
   else { active = "home"; renderHome(); }
   document.querySelectorAll(".nav-item").forEach(n => n.classList.toggle("active", n.dataset.route === (active === "term" || active === "article" ? "library" : active)));
   tip.hide(); window.scrollTo(0, 0);
@@ -614,6 +627,308 @@ async function renderWorld() {
   }
 }
 
+/* ============================================
+   开发者编辑模式 —— 修改 / 新增 / 删除词条
+   保存策略: 优先写回本地 data/(serve.py), 否则存浏览器 localStorage, 可导出 JSON 发布
+   ============================================ */
+let editTab = "edit"; // edit | new | del
+
+const $navEdit = document.getElementById("navEdit");
+const $editToggle = document.getElementById("editToggle");
+const $editToggleTxt = document.getElementById("editToggleTxt");
+const $editKeyRow = document.getElementById("editKeyRow");
+const $editKeyInput = document.getElementById("editKeyInput");
+const $editKeyGo = document.getElementById("editKeyGo");
+
+function toast(msg, type) {
+  let $t = document.getElementById("gtToast");
+  if (!$t) { $t = document.createElement("div"); $t.id = "gtToast"; $t.className = "gt-toast"; document.body.appendChild($t); }
+  $t.textContent = msg;
+  $t.classList.toggle("err", type === "err");
+  $t.classList.add("show");
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => $t.classList.remove("show"), 3600);
+}
+
+function syncEditUI() {
+  document.body.classList.toggle("edit-on", editingOn);
+  if ($navEdit) { $navEdit.classList.toggle("locked", !editingOn); $navEdit.setAttribute("aria-disabled", editingOn ? "false" : "true"); }
+  if ($editToggle) {
+    $editToggle.classList.toggle("on", editingOn);
+    $editToggle.setAttribute("aria-expanded", editingOn ? "true" : "false");
+    $editToggleTxt.textContent = editingOn ? "关闭编辑模式" : "开启编辑模式";
+    if ($editKeyRow) $editKeyRow.hidden = true;
+    if ($editKeyInput) $editKeyInput.value = "";
+  }
+}
+
+function submitKey() {
+  if ($editKeyInput.value.trim() === EDIT_KEY) {
+    editingOn = true; localStorage.setItem(EDIT_STATE_KEY, "1");
+    syncEditUI(); toast("编辑模式已开启");
+    if ((location.hash || "").replace(/^#\/?/, "").split("/")[0] === "edit") renderEdit();
+  } else { toast("密钥错误，请重试", "err"); $editKeyInput.select(); }
+}
+
+function exitEditMode() {
+  editingOn = false; localStorage.removeItem(EDIT_STATE_KEY);
+  syncEditUI();
+  if ((location.hash || "").replace(/^#\/?/, "").split("/")[0] === "edit") location.hash = "#/";
+  toast("编辑模式已关闭");
+}
+
+function bindEditControls() {
+  if (!$editToggle) return;
+  $editToggle.addEventListener("click", () => {
+    if (editingOn) { exitEditMode(); return; }
+    if ($editKeyRow) $editKeyRow.hidden = false;
+    if ($editKeyInput) $editKeyInput.focus();
+  });
+  if ($editKeyGo) $editKeyGo.addEventListener("click", submitKey);
+  if ($editKeyInput) $editKeyInput.addEventListener("keydown", e => { if (e.key === "Enter") submitKey(); });
+}
+
+/* —— 持久化: B(本地服务写盘) 优先, A(localStorage) 兜底 —— */
+async function persistTerms() {
+  try {
+    const r = await fetch("/api/save-terms", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(state.terms) });
+    if (r.ok) { const j = await r.json(); if (j && j.ok) { localStorage.setItem(OVERRIDE_KEY, JSON.stringify(state.terms)); return "file"; } }
+  } catch (e) { /* 无本地写作服务或处于静态托管时走 localStorage */ }
+  localStorage.setItem(OVERRIDE_KEY, JSON.stringify(state.terms));
+  return "local";
+}
+
+function exportTerms() {
+  const blob = new Blob([JSON.stringify(state.terms, null, 2)], { type: "application/json;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = "terms.json";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 4000);
+  toast("已导出 terms.json，可替换 data/terms.json 用于发布");
+}
+
+function resetLocal() {
+  localStorage.removeItem(OVERRIDE_KEY);
+  location.reload();
+}
+
+/* —— 表单工具 —— */
+function gv(id) { return document.getElementById(id).value.trim(); }
+function splitList(s) { return s.split(/[,，、;；]/).map(x => x.trim()).filter(Boolean); }
+function catOptions(sel) {
+  return Object.entries(CAT).filter(([k]) => k !== "centered")
+    .map(([k, v]) => `<option value="${k}"${k === sel ? " selected" : ""}>${v}</option>`).join("");
+}
+
+/* —— 编辑页 —— */
+function renderEdit() {
+  $view.innerHTML = `
+    <section class="edit-page">
+      <div class="edit-head">
+        <div class="edit-kicker">DEV&nbsp;·&nbsp;EDITOR</div>
+        <h1>编辑词条</h1>
+        <div class="edit-sub">修改 / 新增 / 删除词条，改动即时生效并自动保存；连接本地写作服务（start_server.bat）可写回 data/terms.json。</div>
+        <div class="edit-tabs" role="tablist">
+          <button type="button" class="${editTab === "edit" ? "on" : ""}" data-tab="edit">修改词条</button>
+          <button type="button" class="${editTab === "new" ? "on" : ""}" data-tab="new">增加词条</button>
+          <button type="button" class="${editTab === "del" ? "on" : ""}" data-tab="del">删除词条</button>
+          <span class="edit-tabs-sp"></span>
+          <button type="button" id="edExport" class="tbtn">导出 terms.json</button>
+          <button type="button" id="edReset" class="tbtn ghost">重置本地改动</button>
+        </div>
+      </div>
+      <div class="edit-body" id="editBody"></div>
+    </section>`;
+  $view.querySelectorAll(".edit-tabs button[data-tab]").forEach(b =>
+    b.addEventListener("click", () => { editTab = b.dataset.tab; renderEdit(); }));
+  document.getElementById("edExport").addEventListener("click", exportTerms);
+  document.getElementById("edReset").addEventListener("click", () => {
+    if (confirm("确定放弃浏览器里保存的所有本地改动？页面将刷新并回到仓库中的原始 terms.json。")) resetLocal();
+  });
+  const $b = document.getElementById("editBody");
+  if (editTab === "edit") renderEditTab($b);
+  else if (editTab === "new") renderNewTab($b);
+  else renderDelTab($b);
+}
+
+function renderEditLocked() {
+  $view.innerHTML = `
+    <section class="edit-page">
+      <div class="edit-head"><div class="edit-kicker">LOCKED</div><h1>编辑词条</h1>
+        <div class="edit-sub">编辑模式未开启，此功能已锁定。</div></div>
+      <div class="edit-body locked-body">
+        <div class="locked-mark">LK</div>
+        <p>请在左侧栏底部点击 <b>「开启编辑模式」</b> 并输入密钥后进入。</p>
+      </div>
+    </section>`;
+}
+
+/* 词条选择器 */
+function pickerHTML(qid, pid) {
+  return `
+    <div class="edit-pick">
+      <input id="${qid}" type="text" placeholder="输入名称或拼音ID模糊搜索…" autocomplete="off">
+      <div class="edit-picklist" id="${pid}"></div>
+    </div>`;
+}
+function bindPicker(qid, pid, onPick) {
+  const $q = document.getElementById(qid), $pl = document.getElementById(pid);
+  const sorted = state.terms.slice().sort((a, b) => a.name.localeCompare(b.name, "zh"));
+  function draw(list) {
+    $pl.innerHTML = list.map(t => `
+      <button type="button" class="pick-item" data-id="${esc(t.id)}" tabindex="0">
+        <b>${esc(t.name)}</b><span class="pi-id">${esc(t.id)}</span><span class="pi-cat">${catName(t.category)}</span>
+      </button>`).join("");
+    $pl.querySelectorAll(".pick-item").forEach(b => b.addEventListener("click", () => onPick(termById(b.dataset.id))));
+  }
+  draw(sorted);
+  $q.addEventListener("input", () => {
+    const v = $q.value.trim();
+    draw(v ? searchTerms(v) : sorted);
+    $pl.classList.toggle("open", !!v);
+  });
+}
+
+/* —— 修改词条 —— */
+function renderEditTab($b) {
+  $b.innerHTML = `<div class="edit-pick-title">1 · 选择词条</div>` + pickerHTML("edPickQ", "edPickList") + `<form id="edForm" class="ed-form" hidden></form>`;
+  bindPicker("edPickQ", "edPickList", t => {
+    if (!t) return;
+    $b.querySelector("#edPickQ").value = t.name;
+    renderForm($b, t, "edit");
+  });
+}
+
+/* 表单(修改/新增共用) */
+function renderForm($b, t, mode) {
+  const isNew = mode === "new";
+  const $f = $b.querySelector("#edForm");
+  $f.hidden = false;
+  $f.scrollIntoView({ block: "start", behavior: "smooth" });
+  $f.innerHTML = `
+    ${isNew ? "" : `<div class="ed-idline">ID&nbsp;· ${esc(t.id)}</div>`}
+    <div class="ed-grid">
+      ${isNew ? `
+      <label class="ed-field"><span>拼音 ID <i class="req">必填</i></span>
+        <input id="efId" value="" placeholder="hei-se-xuan-wo" autocomplete="off">
+        <em>小写字母 / 数字 / 连字符，全局唯一，作为链接地址</em>
+      </label>` : ""}
+      <label class="ed-field"><span>名称 ${isNew ? '<i class="req">必填</i>' : ""}</span>
+        <input id="efName" value="${esc(t ? t.name : "")}" autocomplete="off">
+      </label>
+      <label class="ed-field"><span>类别 ${isNew ? '<i class="req">必填</i>' : ""}</span>
+        <select id="efCat">${catOptions(t ? t.category : "concept")}</select>
+      </label>
+      <label class="ed-field ed-full"><span>概述 · 一句话简介 ${isNew ? '<i class="req">必填</i>' : ""}</span>
+        <textarea id="efSummary" rows="2">${esc(t ? (t.summary || "") : "")}</textarea>
+      </label>
+      <label class="ed-field ed-full"><span>百科说明 ${isNew ? '<i class="req">必填</i>' : ""}</span>
+        <textarea id="efDetail" rows="8" placeholder="词条完整设定说明，空行分段">${esc(t ? (t.detail || "") : "")}</textarea>
+      </label>
+      <label class="ed-field"><span>别名（选填，逗号分隔，参与自动链接与搜索）</span>
+        <input id="efAliases" value="${esc(t && t.aliases ? t.aliases.join("，") : "")}" autocomplete="off">
+      </label>
+      <label class="ed-field"><span>相关词条（选填，名称或拼音ID，逗号分隔）</span>
+        <input id="efRelated" value="${esc(t && t.related ? t.related.map(id => { const o = termById(id); return o ? o.name : id; }).join("，") : "")}" autocomplete="off">
+      </label>
+      <label class="ed-field"><span>出处编号（选填，如 01，05）</span>
+        <input id="efSources" value="${esc(t && t.sources ? t.sources.join("，") : "")}" autocomplete="off">
+      </label>
+    </div>
+    <div class="ed-linkrow">
+      <label class="ed-check"><input type="checkbox" id="efLinked" ${!t || t.linked !== false ? "checked" : ""}> <span>加入链接</span></label>
+      <span class="ed-linktip">开启：词条名 / 别名在正文中出现时可点击跳转；关闭：只能通过在图书馆搜索找到。</span>
+    </div>
+    <div class="ed-ops">
+      <div id="edMsg" class="ed-msg"></div>
+      <button type="submit" class="btn-primary">${isNew ? "创建词条" : "保存修改"}</button>
+    </div>`;
+
+  $f.addEventListener("submit", async e => { e.preventDefault(); await saveForm($f, t, isNew); });
+}
+
+async function saveForm($f, t, isNew) {
+  const $msg = document.getElementById("edMsg");
+  const errs = [];
+  const name = gv("efName"), cat = gv("efCat"), summary = gv("efSummary"), detail = gv("efDetail");
+  const linked = document.getElementById("efLinked").checked;
+  const al = splitList(gv("efAliases"));
+  const rl = splitList(gv("efRelated")).map(n => { const m = termById(n); return m ? m.id : n; }).filter(Boolean);
+  const sc = splitList(gv("efSources"));
+
+  let id = null;
+  if (isNew) {
+    id = gv("efId");
+    if (!id) errs.push("拼音 ID 必填。");
+    else if (!/^[a-z0-9][a-z0-9-]*$/.test(id)) errs.push("拼音 ID 只能由小写字母、数字、连字符组成。");
+    else if (termById(id)) errs.push("该拼音 ID 已存在：" + id);
+  }
+  if (!name) errs.push("名称必填。");
+  if (!summary) errs.push("概述必填。");
+  if (!detail) errs.push("百科说明必填。");
+  if (errs.length) { $msg.innerHTML = `<div class="ed-err">${errs.map(esc).join("<br>")}</div>`; return; }
+
+  if (isNew) {
+    const nt = { id, name, category: cat, summary, detail };
+    if (al.length) nt.aliases = al;
+    if (rl.length) nt.related = [...new Set(rl)];
+    if (sc.length) nt.sources = sc;
+    if (!linked) nt.linked = false;
+    state.terms.push(nt);
+  } else {
+    t.name = name; t.category = cat; t.summary = summary; t.detail = detail;
+    if (al.length) t.aliases = al; else delete t.aliases;
+    if (rl.length) t.related = [...new Set(rl)]; else delete t.related;
+    if (sc.length) t.sources = sc; else delete t.sources;
+    if (linked) delete t.linked; else t.linked = false;
+  }
+  buildTermMap();
+  const where = await persistTerms();
+  $msg.innerHTML = `<div class="ed-ok">${isNew ? "已创建词条" : "已保存修改"}「${esc(name)}」${where === "file" ? "，已写回 data/terms.json。" : "，已保存到浏览器本地（可点「导出 terms.json」发布）。"}</div>`;
+  $view.scrollIntoView({ block: "start", behavior: "smooth" });
+}
+
+/* —— 增加词条 —— */
+function renderNewTab($b) {
+  $b.innerHTML = `<div class="edit-pick-title">1 · 填写新词条（按现有词条格式创建）</div>` + `<form id="edForm" class="ed-form"></form>`;
+  renderForm($b, null, "new");
+}
+
+/* —— 删除词条 —— */
+function renderDelTab($b) {
+  $b.innerHTML = `<div class="edit-pick-title">1 · 选择要删除的词条</div>` + pickerHTML("edDelQ", "edDelList") + `<div class="del-stage" id="edDelStage"></div>`;
+  let cur = null, armed = false;
+  bindPicker("edDelQ", "edDelList", t => {
+    if (!t || !termById(t.id)) { toast("该词条已不存在", "err"); return; }
+    cur = t; armed = false; drawStage();
+  });
+  function drawStage() {
+    const $s = document.getElementById("edDelStage");
+    if (!cur) { $s.innerHTML = ""; return; }
+    const refs = state.terms.filter(o => o !== cur && (o.related || []).includes(cur.id));
+    $s.innerHTML = `
+      <div class="del-box${armed ? " armed" : ""}">
+        <div class="del-title">删除词条：<b>「${esc(cur.name)}」</b><span class="pi-id">${esc(cur.id)}</span> · ${catName(cur.category)}</div>
+        <p class="del-hint">
+          执行后将同步从 ${refs.length ? "这些词条" : "其他词条"}: ${refs.map(r => "「" + esc(r.name) + "」").join("、") || "—"} 的相关词条中移除引用，该词条名 / 别名不再出现在自动链接中。
+          ${armed ? '<b class="warn-t">这是最后一步确认，删除结果不可撤销。</b>' : ""}
+        </p>
+        <button type="button" class="btn-danger" id="edDelGo">${armed ? "确认删除" : "删除词条"}</button>
+      </div>`;
+    document.getElementById("edDelGo").addEventListener("click", async () => {
+      if (!armed) { armed = true; drawStage(); return; }
+      const id = cur.id, nm = cur.name;
+      state.terms = state.terms.filter(x => x.id !== id);
+      for (const o of state.terms) if (o.related) { const i = o.related.indexOf(id); if (i >= 0) o.related.splice(i, 1); }
+      buildTermMap();
+      await persistTerms();
+      toast("已删除词条「" + nm + "」");
+      renderDelTab($b);
+    });
+  }
+}
+
 /* ---------------- 启动 ---------------- */
 (async function boot() {
   try {
@@ -626,5 +941,7 @@ async function renderWorld() {
     </div>`;
     return;
   }
+  syncEditUI();
+  bindEditControls();
   router();
 })();

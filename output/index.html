@@ -24,9 +24,22 @@
       <a href="#/world" class="nav-item" data-route="world">
         <span class="nav-idx">02</span>了解世界观
       </a>
+      <a href="#/edit" class="nav-item nav-item--edit" data-route="edit" id="navEdit" aria-disabled="true">
+        <span class="nav-idx">03</span>编辑词条
+        <span class="nav-lock" aria-hidden="true"><svg viewBox="0 0 16 16" width="11" height="11"><rect x="3.5" y="6.6" width="9" height="6.4" fill="currentColor"/><path d="M5.5 6.6V4.9a2.5 2.5 0 0 1 5 0v1.7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span>
+      </a>
     </nav>
     <div class="sidebar-foot">
-      <span>三界 · 四尊 · 一校园</span>
+      <span class="edit-mode-wrap">
+        <button id="editToggle" class="edit-toggle" type="button" aria-expanded="false">
+          <span class="edit-toggle-dot" aria-hidden="true"></span>
+          <span id="editToggleTxt">开启编辑模式</span>
+        </button>
+        <span id="editKeyRow" class="edit-keyrow" hidden>
+          <input id="editKeyInput" type="password" inputmode="numeric" maxlength="8" placeholder="输入密钥" autocomplete="off">
+          <button id="editKeyGo" type="button">进入</button>
+        </span>
+      </span>
       <span class="sidebar-hint">词条数载入中</span>
     </div>
   </aside>
