@@ -1,13 +1,4 @@
----
-AIGC:
-    Label: "1"
-    ContentProducer: 001191440300708461136T1XGW3
-    ProduceID: 0a3ac099970a9b65c3c7a716d1c9afb4_7c67e2a7af1011f1af37525400826444
-    ReservedCode1: qW6avvPr/bKOfg17M2/YG2kuHs0n5MPk0tvdEjahCwtlm+RibmHTqWiGwEBuZLZkYAZ0UlWDwOCy8zboc/2ug/7ZhuktIqEr+kB0Yc6uJVbsqUlcMbfUAzLdFVPkYH168vQ2e00BxQ6Rc7teCS75X2cmlDgrjqwzzBpgK5QYxP27WZvgMTWyZGkEM0Y=
-    ContentPropagator: 001191440300708461136T1XGW3
-    PropagateID: 0a3ac099970a9b65c3c7a716d1c9afb4_7c67e2a7af1011f1af37525400826444
-    ReservedCode2: qW6avvPr/bKOfg17M2/YG2kuHs0n5MPk0tvdEjahCwtlm+RibmHTqWiGwEBuZLZkYAZ0UlWDwOCy8zboc/2ug/7ZhuktIqEr+kB0Yc6uJVbsqUlcMbfUAzLdFVPkYH168vQ2e00BxQ6Rc7teCS75X2cmlDgrjqwzzBpgK5QYxP27WZvgMTWyZGkEM0Y=
----
+
 
 # 怪谈世界观总述
 
@@ -22,4 +13,3 @@ AIGC:
 把这些支脉串起来看，《怪谈》的十个篇目各有其位：怪谈本篇以四平一中为轴心铺陈校园怪谈的长卷，终局之战写各路人马在校园防线上的最终摊牌，陈喜彪的报复是终局余波里外来者的一厢情愿，业障则回溯二十世纪三十年代四平街净业莲寺的少年往事，讲述人间与冥界纠缠的一桩旧债；冥界战争回忆录与战争剧情记录着卡罗尔、扎马克等人在洛斯莫德的战争幸存叙事，个人剧情补全了扎马克在余火城的青年时代，冥界设定百科则是理解这个世界的工具书和目录，主线大纲则给出了官方叙事的骨架与坐标。
 
 于是整个怪谈世界给人以这样的整体印象：人间天真而狰狞，冥界苍凉而广阔，梦界深不可测；校园怪谈的诡异幽默与冥界史诗的战争苍凉交织成一体，人物关系如蛛网般彼此牵连。正是这样两套气质截然不同、却又层层咬合的故事，共同构成了怪谈——一部以三界为舞台、以生死为代价、以记录为使命的漫长传说。
-*（内容由AI生成，仅供参考）*
