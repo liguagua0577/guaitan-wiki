@@ -259,6 +259,8 @@ function initGraph(canvas) {
   }
 
   function draw() {
+    // 离开首页(canvas 被移除)后彻底停绘并收起悬停小窗, 避免在图书馆/世界观页误弹
+    if (!canvas.isConnected) { if (!$tip.hidden) tip.hide(); return; }
     ensureSize();
     ctx.clearRect(0, 0, W, H);
     // 视差: 鼠标带动整体微移
